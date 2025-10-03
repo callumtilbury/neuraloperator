@@ -357,7 +357,8 @@ class Trainer:
             loader_metrics = self.evaluate(eval_losses, loader,
                                     log_prefix=loader_name,
                                     mode=loader_eval_mode,
-                                    max_steps=max_autoregressive_steps)   
+                                    max_steps=max_autoregressive_steps,
+                                    epoch=epoch)   
             all_metrics.update(**loader_metrics)
         if self.verbose:
             self.log_eval(epoch=epoch,
